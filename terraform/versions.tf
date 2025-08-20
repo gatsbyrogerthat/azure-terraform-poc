@@ -6,6 +6,7 @@ terraform {
     storage_account_name = "aztfghpoc"  # Replace with actual name
     container_name       = "tfstate"
     key                  = "terraform.tfstate"
+    use_azuread_auth = true
   }  
 
   required_providers {
