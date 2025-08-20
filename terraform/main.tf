@@ -5,9 +5,9 @@
 #}
 
 # Resource Group
-data "azurerm_resource_group" "main" {
-  name     = "aztfgh_poc_rg"
-  #location = var.location
+resource "azurerm_resource_group" "main" {
+  name     = "aztfgh_poc_rg1"
+  location = var.location
 
   tags = {
     environment = var.environment
@@ -19,8 +19,8 @@ data "azurerm_resource_group" "main" {
 # Storage Account for website
 resource "azurerm_storage_account" "website" {
   name                     = "aztfghpoc1"
-  resource_group_name      = data_resource_group.main.name
-  location                 = data_resource_group.main.location
+  resource_group_name      = azurerm_resource_group.main.name
+  location                 = azurerm_resource_group.main.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
   
