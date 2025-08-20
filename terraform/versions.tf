@@ -1,5 +1,13 @@
 terraform {
   required_version = ">= 1.0"
+
+  backend "azurerm" {
+    resource_group_name  = "aztfgh_poc_rg"
+    storage_account_name = "aztfghpoc"  # Replace with actual name
+    container_name       = "tfstate"
+    key                  = "terraform.tfstate"
+  }  
+
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
