@@ -6,7 +6,7 @@
 
 # Resource Group
 resource "azurerm_resource_group" "main" {
-  name     = "rg-terraform-poc-${random_integer.suffix.result}"
+  name     = "aztfgh_poc_rg"
   location = var.location
 
   tags = {
