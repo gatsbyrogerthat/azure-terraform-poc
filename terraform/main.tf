@@ -18,7 +18,7 @@ resource "azurerm_resource_group" "main" {
 
 # Storage Account for website
 resource "azurerm_storage_account" "website" {
-  name                     = "aztfgh_poc"
+  name                     = "aztfghpoc"
   resource_group_name      = azurerm_resource_group.main.name
   location                 = azurerm_resource_group.main.location
   account_tier             = "Standard"
