@@ -39,7 +39,7 @@ resource "azurerm_storage_account" "website" {
 resource "azurerm_storage_blob" "index" {
   name                   = "index.html"
   storage_account_name   = azurerm_storage_account.website.name
-  storage_container_name = "$web1"
+  storage_container_name = "$web"
   type                   = "Block"
   source                 = "${path.module}/../web/index.html"
   content_type          = "text/html"
@@ -48,7 +48,7 @@ resource "azurerm_storage_blob" "index" {
 resource "azurerm_storage_blob" "style" {
   name                   = "style.css"
   storage_account_name   = azurerm_storage_account.website.name
-  storage_container_name = "$web1"
+  storage_container_name = "$web"
   type                   = "Block"
   source                 = "${path.module}/../web/style.css"
   content_type          = "text/css"
