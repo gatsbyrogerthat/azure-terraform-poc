@@ -17,8 +17,8 @@ data "azurerm_resource_group" "main" {
 }
 
 # Storage Account for website
-data "azurerm_storage_account" "website" {
-  name                     = "aztfghpoc"
+resource "azurerm_storage_account" "website" {
+  name                     = "aztfghpoc1"
   resource_group_name      = azurerm_resource_group.main.name
   location                 = azurerm_resource_group.main.location
   account_tier             = "Standard"
@@ -36,19 +36,19 @@ data "azurerm_storage_account" "website" {
 }
 
 # Upload website files
-data "azurerm_storage_blob" "index" {
+resource "azurerm_storage_blob" "index" {
   name                   = "index.html"
   storage_account_name   = azurerm_storage_account.website.name
-  storage_container_name = "$web"
+  storage_container_name = "$web1"
   type                   = "Block"
   #source                 = "${path.module}/../web/index.html"
   content_type          = "text/html"
 }
 
-data "azurerm_storage_blob" "style" {
+resource "azurerm_storage_blob" "style" {
   name                   = "style.css"
   storage_account_name   = azurerm_storage_account.website.name
-  storage_container_name = "$web"
+  storage_container_name = "$web1"
   type                   = "Block"
   #source                 = "${path.module}/../web/style.css"
   content_type          = "text/css"
