@@ -1,8 +1,8 @@
 # Generate random suffix for unique naming
-resource "random_integer" "suffix" {
-  min = 1000
-  max = 9999
-}
+#resource "random_integer" "suffix" {
+ # min = 1000
+  #max = 9999
+#}
 
 # Resource Group
 resource "azurerm_resource_group" "main" {
@@ -18,7 +18,7 @@ resource "azurerm_resource_group" "main" {
 
 # Storage Account for website
 resource "azurerm_storage_account" "website" {
-  name                     = "satfpoc${random_integer.suffix.result}"
+  name                     = "aztfgh-poc"
   resource_group_name      = azurerm_resource_group.main.name
   location                 = azurerm_resource_group.main.location
   account_tier             = "Standard"
