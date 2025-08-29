@@ -3,7 +3,7 @@ terraform {
 
   backend "azurerm" {
     resource_group_name  = "aztfgh_poc_rg"
-    storage_account_name = "aztfghpoc"  # Replace with actual name
+    storage_account_name = "aztfghpoc"
     container_name       = "tfstate"
     key                  = "terraform.tfstate"
     use_azuread_auth = true
